@@ -10,7 +10,7 @@ public class BOJ_바이러스_2606 {
 	
 	static int ComCnt, P, ans;
 	static int[][] graph;
-	static boolean[] checked;
+	static boolean[] checked; 
 	static Queue<Integer> q;
 	
 	public static void main(String[] args) throws Exception {
