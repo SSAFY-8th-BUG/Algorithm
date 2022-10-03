@@ -5,8 +5,11 @@ public class swea_5656_tableMinPark {
 
     // 중복순열
     static int T, N, W, H, answer;
+    static int[][] src;
     static int[][] map;
+    static int[] srcTop;
     static int[] top;
+
     
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -21,22 +24,23 @@ public class swea_5656_tableMinPark {
             N = Integer.parseInt(st.nextToken());
             W = Integer.parseInt(st.nextToken());
             H = Integer.parseInt(st.nextToken());
-
-            map = new int[H][W];
-            top = new int[W];
-            Arrays.fill(top, H);
+            
+            src = new int[H][W];
+            srcTop = new int[W];
+            Arrays.fill(srcTop, H);
 
             for (int y = 0; y < H; y++) {
                 st = new StringTokenizer(br.readLine());
                 for (int x = 0; x < W; x++) {
-                    map[y][x] = Integer.parseInt(st.nextToken());
-                    if (map[y][x] > 0) {
-                        top[x] = Math.min(top[x], y);
+                    src[y][x] = Integer.parseInt(st.nextToken());
+                    if (src[y][x] > 0) {
+                        srcTop[x] = Math.min(srcTop[x], y);
                     }
                 }
             }
-
-            answer = 0;
+            
+            answer = Integer.MAX_VALUE;
+            tgt = new int[N];
             solve(0);
 
             sb.append("#").append(t).append(" ").append(answer).append("\n");
@@ -47,14 +51,19 @@ public class swea_5656_tableMinPark {
     }
     
     static int[] tgt;
-
     static void solve(int tgtIdx) {
-        if (tgtIdx == N) {
+        if (tgtIdx == N) {            
+            map = new int[H][W];
+            top = new int[W];
+            copy(map, top);
 
             for (int x : tgt) {
+                if (top[x] == H) continue;
                 remove(top[x], x, map[top[x]][x]);
+                sort();
             }
 
+            answer = Math.min(answer, counting());
             return;
         }
         for (int i = 0; i < W; i++) {
@@ -62,22 +71,49 @@ public class swea_5656_tableMinPark {
             solve(tgtIdx + 1);
         }
     }
+
+    static void copy(int[][] map, int[] top) {
+        for (int x = 0; x < W; x++){
+            for (int y = 0; y < H; y++){
+                map[y][x] = src[y][x];
+            }
+            top[x] = srcTop[x];
+        }
+    }
     
     static int[] dy = { 0, 0, -1, 1 };
     static int[] dx = { -1, 1, 0, 0 };
 
     static void remove(int y, int x, int p) {
+        map[y][x] = 0;
         for (int i = 0; i < 4; i++) {
             
             for (int j = 1; j < p; j++) {
                 int ny = y + dy[i] * j;
                 int nx = x + dx[i] * j;
 
-                if (ny < 0 || ny >= H || nx < 0 || nx >= W)
-                    continue;
+                if (ny < 0 || ny >= H || nx < 0 || nx >= W) continue;
 
                 remove(ny, nx, map[ny][nx]);
             }
+        }
+    }
+
+    static void sort(){
+        Stack<Integer> stack = new Stack<>();
+        for (int x = 0; x < W; x++){
+            for (int y = 0; y < H; y++){
+                if (map[y][x] != 0) {
+                    stack.push(map[y][x]);
+                    map[y][x] = 0;
+                }
+            }
+
+            int y = H;
+            while(!stack.isEmpty()){
+                map[--y][x] = stack.pop();
+            }
+            top[x] = y;
         }
     }
     
@@ -88,5 +124,4 @@ public class swea_5656_tableMinPark {
         }
         return count;
     }
-
 }
