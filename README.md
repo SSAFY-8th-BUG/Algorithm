@@ -6,13 +6,19 @@ Every MON 9 P.M.
 
 |이름|GitHub|이름|GitHub|
 |---|---|---|---|
-|성아|[@seongahpark](https://github.com/seongahpark)|주영|[@JuyoungKimmy-Kim](https://github.com/JuyoungKimmy-Kim)|
-|빛누리|[@bnuri00](https://github.com/bnuri00)|상민|[@tableMinPark](https://github.com/tableMinPark)|
-|시우|[@SIU-JANG](https://github.com/SIU-JANG)|
+|빛누리|[@bnuri00](https://github.com/bnuri00)|주영|[@JuyoungKimmy-Kim](https://github.com/JuyoungKimmy-Kim)|
+|시우|[@SIU-JANG](https://github.com/SIU-JANG)|상민|[@tableMinPark](https://github.com/tableMinPark)|
+
+
+## 명예의 전당👑
+
+|이름|GitHub|
+|---|---|
+|성아|[@seongahpark](https://github.com/seongahpark)|
 
 ## Rule
 
-1) 주 마다 돌아가면서 **6문제** 선정 (필수 5문제 + 선택 1문제)
+1) 주 마다 돌아가면서 **5문제** 선정 (필수 4문제 + 선택 1문제)
 2) 저번 주에 풀었던 문제 코드 리뷰
 3) 코드 리뷰 시에는 각자 어떻게 풀었는지, 시간/공간 복잡도 발표
 4) 언어는 **JAVA**, **MYSQL**
