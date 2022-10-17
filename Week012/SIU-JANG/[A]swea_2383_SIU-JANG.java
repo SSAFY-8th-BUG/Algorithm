@@ -9,7 +9,7 @@ import java.util.Deque;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class SWEA_점심식사시간_2383 {
+public class SWEA_점심식사시간_2383 { 
 	
 	static int T, N, ans;
 	static int[][] map;

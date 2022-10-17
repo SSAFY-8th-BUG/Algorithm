@@ -9,7 +9,7 @@ import java.util.*;
 // 시간별로 진행을 하니까 temp에 넣어줘서 원래 pq가 다 돌고 temp에 있는거 다시 넣어주기 
 
 public class SWEA_줄기세포배양_5653 { 
-	static int N,M,K,days;
+	static int N,M,K,days;  
 	static boolean[][] visited;
 	static int[][] map;
 	static int[] dx = {0,1,0,-1};
