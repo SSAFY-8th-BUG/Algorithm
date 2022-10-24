@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Comparator;
  
-public class BOJ_전깃줄_2565 {
+public class BOJ_전깃줄_2565 { 
  
 	static Integer[] dp;
 	static int[][] wire;
