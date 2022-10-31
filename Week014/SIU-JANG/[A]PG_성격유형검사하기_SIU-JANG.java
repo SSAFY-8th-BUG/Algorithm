@@ -11,7 +11,7 @@ class Solution {
         map.put('F', 0);
         map.put('J', 0);
         map.put('M', 0);
-        map.put('A', 0);
+        map.put('A', 0); 
         map.put('N', 0);
         
         for (int i = 0; i < survey.length; i++) {

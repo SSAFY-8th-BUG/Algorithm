@@ -10,7 +10,7 @@ class Solution {
         for (int tmp : queue2) {q2.add(tmp); s2+=tmp;}
         sum = s1+s2;
         if (sum%2==1) return -1;
-        sum/=2;
+        sum/=2; 
         int p1 = 0, p2 = 0, limit = queue1.length*2;
         while (p1<=limit && p2<=limit) {
             if (s1 == sum) return p1+p2;

@@ -12,7 +12,7 @@ class Solution {
         }
         
         if(goal_a<=alp&&goal_c<=cop){
-            return 0;
+            return 0; 
         }
         
         if(alp>=goal_a){

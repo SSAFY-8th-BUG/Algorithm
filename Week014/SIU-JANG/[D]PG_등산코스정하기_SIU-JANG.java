@@ -9,7 +9,7 @@ public class Solution {
         Node(int e, int w) {
             this.e = e;
             this.w = w;
-        }
+        } 
     }
 
     public static int[] solution(int n, int[][] paths, int[] gates, int[] summits) {
