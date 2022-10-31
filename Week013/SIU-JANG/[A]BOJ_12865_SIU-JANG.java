@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class BOJ_평범한배낭_12865 {
+public class BOJ_평범한배낭_12865 { 
 	
 	static int N, K;
 	static int[][] dp, item;

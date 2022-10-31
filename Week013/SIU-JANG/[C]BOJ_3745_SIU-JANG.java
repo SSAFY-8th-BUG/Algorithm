@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class BOJ_오름세_3745 {
-	
+	 
 	static int N, len;
 	static int[] input, memoi;
 	
