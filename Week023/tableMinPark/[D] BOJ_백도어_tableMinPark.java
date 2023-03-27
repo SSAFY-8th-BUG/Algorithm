@@ -6,13 +6,18 @@ public class BOJ_백도어_tableMinPark {
     static int N, M, answer;
     static boolean[] w;
     static List<List<Node>> graph;
-    static class Node {
+    static class Node implements Comparable<Node>{
         int n;
-        int d;
-        public Node(int n, int d){
+        long d;
+        public Node(int n, long d){
             this.n = n;
             this.d = d;
         }
+        @Override
+        public int compareTo(Node o) {
+            return Long.compare(this.d, o.d);
+        }
+
     }
 
     public static void main(String[] args) throws IOException {
@@ -42,21 +47,21 @@ public class BOJ_백도어_tableMinPark {
             graph.get(b).add(new Node(a, t));
         }
 
-        answer = solve();
+        long answer = solve();
         
 
-        System.out.println(answer == Integer.MAX_VALUE ? -1 : answer);
+        System.out.println(answer == Long.MAX_VALUE ? -1 : answer);
         br.close();        
     }
 
-    static int solve() {
-        PriorityQueue<Node> q = new PriorityQueue<>((Node n1, Node n2) -> n1.d - n2.d);
+    static long solve() {
+        PriorityQueue<Node> q = new PriorityQueue<>();
         boolean[] v = new boolean[N];
-        int[] value = new int[N];
-        Arrays.fill(value, Integer.MAX_VALUE);
+        long[] value = new long[N];
+        Arrays.fill(value, Long.MAX_VALUE);
 
         q.add(new Node(0, 0));
-        value[0] = 0;
+        value[0] = 0L;
 
         while(!q.isEmpty()){
             Node now = q.poll();
