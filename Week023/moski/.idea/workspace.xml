@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45d20c4b-e20c-43f8-969e-a4ff773d350d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/[A]BJ_미로만들기_moski.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/[B]BJ_알고스팟_moski.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/[C]BJ_파티_moski.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/[D]BJ_백도어_moski.java" afterDir="false" />
-    </list>
+    <list default="true" id="45d20c4b-e20c-43f8-969e-a4ff773d350d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
