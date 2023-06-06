@@ -1,39 +1,48 @@
+
 import java.util.*;
 
 class Solution {
-    static long[] dp1, dp2;
-    public long solution(int[] sequence) {
-        long answer = -999999L;
-        int len = sequence.length;
-        dp1 = new long[len+1];
-        dp2 = new long[len+1];
+    static char[][] board;
+    static char turn;
+    public int solution(String[] board2) {
+        int answer = -1;
+        board = new char[3][3];
+        for(int i=0; i<3; i++)
+            for(int j=0; j<3; j++)
+                board[i][j] = board2[i].charAt(j);
+        if(checkCnt()==0) return 0;
+        if(checkOver()==0) return 0;
+        return 1;
         
-        
-        for(int i=0; i<len; i++){
-            long num1, num2;
-            if(i%2==0){
-                num1 = sequence[i];
-                num2 = -sequence[i];
-                
-            }else{
-                num1 = -sequence[i];
-                num2 = sequence[i];
-            }
-            
-            if(i==0) {
-                dp1[i]=num1;
-                dp2[i]=num2;
-                answer = Math.max(answer, dp1[i]);
-                answer = Math.max(answer, dp2[i]);
-            }
-            else{
-                dp1[i] = Math.max(num1, num1 + dp1[i-1]);
-                dp2[i] = Math.max(num2, num2 + dp2[i-1]);
-                answer = Math.max(answer, dp1[i]);
-                answer = Math.max(answer, dp2[i]);
+    }
+    
+    static int checkCnt(){
+        int cnto=0, cntx=0;
+        for(int y=0; y<3; y++){
+            for(int x=0; x<3; x++){
+                if(board[y][x]=='O') cnto++;
+                else if(board[y][x]=='X') cntx++;
             }
         }
-        //System.out.println(Arrays.toString(dp2));
-        return answer;
+        //갯수 체크
+        if(cnto== cntx){turn='O'; return 1;}
+        if( cnto == cntx+1){turn='X'; return 1;}
+        return 0;
+    }
+    
+    static int checkOver(){
+        for(int i=0; i<3; i++){ //상하좌우 체크
+            if(board[i][0]!='.' && board[i][0]==turn ){
+                if(board[i][0] == board[i][1] && board[i][0] == board[i][2]) return 0;
+            }
+            if(board[0][i]!='.' && board[0][i]==turn){
+                if(board[0][i] == board[1][i] && board[0][i] == board[2][i]) return 0;
+            }
+        }
+        if(board[1][1] != '.' && board[1][1]==turn){ //대각선 체크
+            if(board[1][1] == board[0][0] && board[1][1] == board[2][2]) return 0;
+            if(board[1][1] == board[2][0] && board[1][1] == board[0][2]) return 0;
+        }
+        return 1;
     }
 }
