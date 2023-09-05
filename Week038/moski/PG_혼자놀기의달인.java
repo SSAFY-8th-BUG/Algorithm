@@ -13,16 +13,17 @@ public class PG_혼자놀기의달인 {
         }
 
         for(int i=0; i<cards.length;i++){
-            union(i+1, card[i]);
+            union(i+1, cards[i]);
         }
 
         for(int i=1;i<parent.length;i++){
             sum[find(i)]++;
         }
 
-        Arrays.sort(sum, Collections.reverseOrder());
+        Integer[] sumTmp = Arrays.stream(sum).boxed().toArray(Integer[]::new);
+        Arrays.sort(sumTmp, Collections.reverseOrder());
 
-        answer = sum[0] * sum[1];
+        answer = sumTmp[0] * sumTmp[1];
         return answer;
     }
 
