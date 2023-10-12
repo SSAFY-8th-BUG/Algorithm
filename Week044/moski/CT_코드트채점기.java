@@ -1,11 +1,15 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.*;
 public class CT_코드트채점기 {
 
     static int Q, N;
 
     static PriorityQueue<Task> pq;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         // 여기에 코드를 작성해주세요.
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Q = Integer.parseInt(br.readLine());
 
     }
 
